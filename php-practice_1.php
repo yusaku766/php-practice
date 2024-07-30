@@ -15,10 +15,10 @@ $today = date("Y年m月d日 H時i分s秒");
 echo "現在時刻は、".$today."です。";
 
 // Q4 条件分岐-1 if文
-$device = 2;
+$device = 'Mac';
 
-if ($device === 1 || $device === 2) {
-    echo $device === 1 ? '使用OSは、windowsです。' : '使用OSは、macです。';
+if ($device === 'Windows' || $device === 'Mac') {
+    echo  "使用OSは、".$device."です。";
 } else {
     echo 'どちらでもありません。';
 }
@@ -103,12 +103,12 @@ else{
 }
 
 // Q10 関数-1
-function hello($name)
+function hello($name) // 仮引数
 {
     return $name."さん、こんにちは。";
 }
 
-echo hello('佐藤')."\n";
+echo hello('佐藤')."\n"; // 実引数
 echo hello('渡辺')."\n";
 
 // Q11 関数-2
@@ -141,24 +141,21 @@ function evaluateGrad($Grade){
        case 'A':
        case 'B':
            return "合格です。"."\n";
-           break;
        
        case 'C':
            return "合格ですが追加課題があります。"."\n";
-           break;
            
        case 'D':
            return "不合格です。"."\n";
-           break;
            
        default:
            return "判定不明です。講師に問い合わせてください。"."\n";
-           break;
            
    }
    }
    
    echo evaluateGrad('B');
    echo evaluateGrad('E');
+
 
 ?>

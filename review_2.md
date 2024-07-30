@@ -77,17 +77,24 @@ echo $prev->diff($now)->format('%a')
 
 １ブラウザを開いて、PHP公式マニュアルのサイト（https://www.php.net/manual/ja/）にアクセス。
 
-２マニュアルのページ上部にある検索ボックスに「DateInterval::format」と入力し、検索後「DateInterval::format」をクリック。
+２3行目の$prev->diff($now)のprevとnowはDatetimeクラスのインスタンス。そのため、
+まずはDatetimeで検索。
 
-３「DateInterval::format」メソッドのページ内のメソッドの説明を確認する。
+３Datetimeページのクラス概要を確認し、3行目にもあるdiffをクリック。
+
+４diffページの返り値を確認しDateintervalをクリック
+
+５Dateintervalページのクラス概要を確認し、３行目にもあるformatをクリック
+
+６「DateInterval::format」メソッドのページ内のメソッドの説明を確認する。
 　public DateInterval::format(string $format): string
 　間隔をフォーマットします。　
 
-４ページ内の返り値セクションを確認する。
+７ページ内の返り値を確認する。
 フォーマットされた間隔を返します。
 返り値がstring(文字列)であることが記載されている。
 
-５ページ内のパラメータセクションを確認する。
+８ページ内のパラメータセクションを確認する。
 %：リテラルとしての%
 a：DateTime::diff() の結果に使った場合は総日数、それ以外の場合は (unknown)
 
