@@ -38,10 +38,8 @@ $personalInfos = [
 echo $personalInfos[1]['name']."の電話番号は".$personalInfos[1]['tel']."です。";
 
 問題2
-$index = 1;
-foreach ($personalInfos as $info) {
-    echo $index."番目の".$info['name']."のメールアドレスは".$info['mail']."で、電話番号は".$info['tel']."です。"."\n";
-    $index++;
+foreach ($personalInfos as $key => $info) {
+    echo ($key+1)."番目の".$info['name']."のメールアドレスは".$info['mail']."で、電話番号は".$info['tel']."です。"."\n";
 }
 
 問題3
@@ -98,14 +96,12 @@ $yamada->attend('PHP');
 問題1
 $today = new DateTime('2021-03-02');
 $oneMonthAgo = clone $today;
-$oneMonthAgo->modify('-1 month');
-echo $oneMonthAgo->format('Y-m-d');
+echo $oneMonthAgo->modify('-1 month')->format('Y-m-d');
 
 問題2
 $today = new DateTime('2021-03-02');
 $pastDate = new DateTime('1992-04-25');
-$interval = $today->diff($pastDate);
-$daysPassed = $interval->days;
+$daysPassed = $today->diff($pastDate)->days;
 
 echo "あの日から".$daysPassed."日経過しました。";
 ?>
